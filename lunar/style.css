@@ -1,0 +1,301 @@
+html {
+  background-color: #000;
+}
+
+body {
+  background: #000;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: red;
+  font-size: 2rem;
+  color: #FFF;
+  background: linear-gradient(20deg, rgba(0, 0, 0, 0.1) 60%, rgba(90, 84, 245, 0.5) 90%), linear-gradient(75deg, #5a54f5 -10%, rgba(0, 0, 0, 0.1) 20%), linear-gradient(20deg, rgba(84, 199, 245, 0.2) 10%, rgba(0, 0, 0, 0.1) 30%), linear-gradient(190deg, white, rgba(0, 0, 0, 0.5) 15%), linear-gradient(10deg, black 20%, rgba(90, 84, 245, 0.5) 60%);
+}
+
+.circuit {
+  position: absolute;
+  top: calc(50vh - 30vh);
+  right: calc(50vw - 30vh);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  border-radius: 50%;
+  border: 0 solid transparent;
+  width: 60vh;
+  height: 60vh;
+  mix-blend-mode: overlay;
+}
+.circuit.one {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  border-radius: 50%;
+  border-top: 0.5vh solid #5A54F5;
+  -webkit-animation: rotateOne 8s infinite linear;
+          animation: rotateOne 8s infinite linear;
+}
+@-webkit-keyframes rotateOne {
+  from {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+  to {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+@keyframes rotateOne {
+  from {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+  to {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+.circuit.two {
+  -webkit-transform: scale(0.7) rotate(120deg);
+          transform: scale(0.7) rotate(120deg);
+  border-top: 0.65vh solid #FFF;
+  -webkit-animation: rotateTwo 6s infinite linear;
+          animation: rotateTwo 6s infinite linear;
+}
+@-webkit-keyframes rotateTwo {
+  from {
+    -webkit-transform: scale(0.7) rotate(120deg);
+            transform: scale(0.7) rotate(120deg);
+  }
+  to {
+    -webkit-transform: scale(0.7) rotate(-240deg);
+            transform: scale(0.7) rotate(-240deg);
+  }
+}
+@keyframes rotateTwo {
+  from {
+    -webkit-transform: scale(0.7) rotate(120deg);
+            transform: scale(0.7) rotate(120deg);
+  }
+  to {
+    -webkit-transform: scale(0.7) rotate(-240deg);
+            transform: scale(0.7) rotate(-240deg);
+  }
+}
+.circuit.three {
+  -webkit-transform: scale(0.3) rotate(20deg);
+          transform: scale(0.3) rotate(20deg);
+  border-top: 2vh solid #5A54F5;
+  -webkit-animation: rotateThree 4s infinite linear;
+          animation: rotateThree 4s infinite linear;
+  mix-blend-mode: exclusion;
+}
+.circuit.three.invert {
+  border-top: 0 solid transparent;
+  border-bottom: 2vh solid #FFF;
+  animation: rotateThree 4s infinite reverse linear;
+}
+@-webkit-keyframes rotateThree {
+  from {
+    -webkit-transform: scale(0.3) rotate(20deg);
+            transform: scale(0.3) rotate(20deg);
+  }
+  to {
+    -webkit-transform: scale(0.3) rotate(380deg);
+            transform: scale(0.3) rotate(380deg);
+  }
+}
+@keyframes rotateThree {
+  from {
+    -webkit-transform: scale(0.3) rotate(20deg);
+            transform: scale(0.3) rotate(20deg);
+  }
+  to {
+    -webkit-transform: scale(0.3) rotate(380deg);
+            transform: scale(0.3) rotate(380deg);
+  }
+}
+.circuit.four {
+  border: none;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  mix-blend-mode: color-dodge;
+  -webkit-animation: rotateFour 12s infinite linear;
+          animation: rotateFour 12s infinite linear;
+}
+.circuit.four::after {
+  content: '';
+  position: absolute;
+  top: 7vh;
+  left: 7vh;
+  width: 4vh;
+  height: 4vh;
+  background: #FFF;
+  border-radius: 50%;
+}
+.circuit.four.invert {
+  -webkit-animation-delay: -6s;
+          animation-delay: -6s;
+}
+.circuit.four.clone {
+  mix-blend-mode: exclusion;
+  -webkit-animation-delay: -3s;
+          animation-delay: -3s;
+  animation-direction: reverse;
+}
+.circuit.four.clone::after {
+  background: #5A54F5;
+}
+.circuit.four.clone.invert {
+  -webkit-animation-delay: -9s;
+          animation-delay: -9s;
+}
+@-webkit-keyframes rotateFour {
+  from {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  to {
+    -webkit-transform: rotate(-270deg);
+            transform: rotate(-270deg);
+  }
+}
+@keyframes rotateFour {
+  from {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  to {
+    -webkit-transform: rotate(-270deg);
+            transform: rotate(-270deg);
+  }
+}
+.circuit.five {
+  -webkit-transform: scale(3) translate(33%);
+          transform: scale(3) translate(33%);
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+  box-shadow: 0 0 1vw 0vw #5A54F5, inset 0 0 1vw 1vw #5A54F5;
+}
+
+.square {
+  position: absolute;
+  top: 7.5vh;
+  left: 7.5vh;
+  width: 5vw;
+  height: 5vw;
+  border: 2px solid #FFF;
+  mix-blend-mode: overlay;
+}
+.square > .square {
+  top: 0.5vw;
+  left: 0.5vw;
+  -webkit-transform: scale(0.9) translate(10%, 10%);
+          transform: scale(0.9) translate(10%, 10%);
+  opacity: 0.7;
+}
+
+.rect {
+  position: absolute;
+  top: 5vh;
+  left: 5vh;
+  width: 20vw;
+  height: 10vw;
+  border-top: 2px solid #FFF;
+  border-left: 2px solid #FFF;
+  mix-blend-mode: overlay;
+}
+.rect::after {
+  position: absolute;
+  top: 2vw;
+  right: 11vh;
+  width: 2px;
+  height: 50vh;
+  background-color: #FFF;
+}
+
+.line {
+  position: absolute;
+  bottom: calc(5vh - 0.9vh);
+  left: 5vh;
+  height: 0.5vh;
+  width: calc(50vw - 5vh);
+  background-color: #FFF;
+  mix-blend-mode: overlay;
+}
+.line::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 1.5vw;
+  left: 25vw;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 5vw;
+  height: 1vw;
+  background: linear-gradient(90deg, #FFF 0vw 1vw, rgba(255, 255, 255, 0) 1vw 2vw, #FFF 2vw 3vw, rgba(255, 255, 255, 0) 3vw 4vw, #FFF 4vw 5vw);
+}
+
+.ladder {
+  position: absolute;
+  bottom: 5vh;
+  left: 5vh;
+  height: 30vh;
+  width: 10vh;
+  mix-blend-mode: overlay;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0vh 1vh, #FFF 1vh 1.5vh, rgba(255, 255, 255, 0) 1.5vh 3vh, #FFF 3vh 3.5vh, rgba(255, 255, 255, 0) 3.5vh 5vh, #FFF 5vh 5.5vh, rgba(255, 255, 255, 0) 5.5vh 7vh, #FFF 7vh 7.5vh, rgba(255, 255, 255, 0) 7.5vh 9vh, #FFF 9vh 9.5vh, rgba(255, 255, 255, 0) 9.5vh 11vh, #FFF 11vh 11.5vh, rgba(255, 255, 255, 0) 11.5vh 13vh, #FFF 13vh 13.5vh, rgba(255, 255, 255, 0) 13.5vh 15vh, #FFF 15vh 15.5vh, rgba(255, 255, 255, 0) 15.5vh 17vh, #FFF 17vh 17.5vh, rgba(255, 255, 255, 0) 17.5vh 19vh, #FFF 19vh 19.5vh, rgba(255, 255, 255, 0) 19.5vh 21vh, #FFF 21vh 21.5vh, rgba(255, 255, 255, 0) 21.5vh 23vh, #FFF 23vh 23.5vh, rgba(255, 255, 255, 0) 23.5vh 25vh, #FFF 25vh 25.5vh, rgba(255, 255, 255, 0) 25.5vh 27vh, #FFF 27vh 27.5vh, rgba(255, 255, 255, 0) 27.5vh 29vh, #FFF 29vh 29.5vh, rgba(255, 255, 255, 0) 29.5vh 31vh, #FFF 31vh 31.5vh, rgba(255, 255, 255, 0) 31.5vh 33vh, #FFF 33vh 33.5vh, rgba(255, 255, 255, 0) 33.5vh 35vh, #FFF 35vh 35.5vh, rgba(255, 255, 255, 0) 35.5vh 37vh, #FFF 37vh 37.5vh, rgba(255, 255, 255, 0) 37.5vh 39vh, #FFF 39vh 39.5vh, rgba(255, 255, 255, 0) 39.5vh 41vh, #FFF 21vh 21.5vh, rgba(255, 255, 255, 0) 41.5vh 43vh, #FFF 43vh 43.5vh, rgba(255, 255, 255, 0) 43.5vh 45vh, #FFF 45vh 45.5vh, rgba(255, 255, 255, 0) 45.5vh 47vh, #FFF 47vh 47.5vh, rgba(255, 255, 255, 0) 47.5vh 49vh, #FFF 49vh 49.5vh, rgba(255, 255, 255, 0) 49.5vh 51vh);
+}
+
+.bar {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 100vh;
+  width: 5px;
+  background: #5A54F5;
+  mix-blend-mode: difference;
+}
+
+.pointer {
+  position: absolute;
+  top: 50vh;
+  left: 5vw;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100px;
+  height: 100px;
+  border: 1px solid #FFF;
+  border-radius: 50%;
+  background: #5A54F5;
+  box-shadow: inset 0px 0px 0px 25px #000;
+}
+
+.squareGrad {
+  position: relative;
+  position: absolute;
+  top: 5vw;
+  right: 5vw;
+  width: 7vw;
+  height: 7vw;
+  background: linear-gradient(217deg, white, rgba(90, 84, 245, 0) 70.71%), linear-gradient(277deg, #5a54f5, rgba(0, 0, 0, 0.5) 70.71%), linear-gradient(326deg, #5a54f5, rgba(0, 0, 0, 0) 70.71%);
+}
+
+.squareGrad-2 {
+  position: absolute;
+  top: 10vw;
+  right: 8vw;
+  width: 5vw;
+  height: 5vw;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  background: linear-gradient(217deg, #5a54f5, rgba(90, 84, 245, 0) 40%), linear-gradient(67deg, white, rgba(0, 0, 0, 0.5) 60%), linear-gradient(76deg, #5a54f5, rgba(0, 0, 0, 0) 60%);
+}
+
+.squareGrad-3 {
+  position: absolute;
+  top: 20vw;
+  right: 7vw;
+  width: 2vw;
+  height: 2vw;
+  background: linear-gradient(60deg, white, rgba(0, 0, 0, 0) 30%), linear-gradient(150deg, black, rgba(90, 84, 245, 0.5) 70%), linear-gradient(300deg, black, rgba(90, 84, 245, 0) 30%);
+}
